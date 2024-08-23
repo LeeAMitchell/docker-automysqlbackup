@@ -69,7 +69,6 @@ RUN chmod +x /usr/local/bin/go-cron \
     /usr/local/bin/automysqlbackup \
     /usr/local/bin/start.sh
 
-RUN groupadd --system automysqlbackup --gid=1000 && useradd --system --uid=1000 --gid automysqlbackup automysqlbackup
 
 WORKDIR /backup
 
@@ -95,7 +94,7 @@ ENV USERNAME=           \
     ROUTINES=yes        \
     EXTRA_OPTS=         \
     CRON_SCHEDULE=      \
-    USER_ID=1           \
+    USER_ID=           \
     GROUP_ID=
 
 CMD ["start.sh"]
